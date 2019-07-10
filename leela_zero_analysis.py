@@ -259,7 +259,8 @@ class Leela_Zero_gtp(gtp):
 		leela_zero_working_directory=leela_zero_working_directory.encode(sys.getfilesystemencoding())
 		if leela_zero_working_directory:
 			log("Leela Zero working directory:",leela_zero_working_directory)
-			self.process=subprocess.Popen(command,cwd=leela_zero_working_directory, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#			self.process=subprocess.Popen(command,cwd=leela_zero_working_directory, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                        self.process=subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		else:
 			self.process=subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		self.size=0
